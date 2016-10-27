@@ -1450,7 +1450,7 @@ def sv_genotype(bam_string,
                                                        o1_is_reverse, o2_is_reverse,
                                                        split_slop)
                     # p_alt = prob_mapq(split.query_left) * prob_mapq(split.query_right)
-                    p_alt = (prob_mapq(split.query_left) * split_lr[0] + prob_mapq(split.query_right) * split_lr[1]) / 2.0
+                    p_alt = (prob_mapq(split.query_left) * split_lr[0] * prob_mapq(split.query_right) * split_lr[1]) / 2.0
                     alt_seq += p_alt
 
                     if p_alt > 0:
